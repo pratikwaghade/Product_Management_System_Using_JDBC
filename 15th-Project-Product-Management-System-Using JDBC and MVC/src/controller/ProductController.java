@@ -96,8 +96,16 @@ public class ProductController {
 		connection().close();
 	}
 	
-	public void updateProduct(int updateID) throws Exception
+	public void updateProduct() throws Exception
 	{
+		System.out.println("Available data in database: ");
+		System.out.println();
+		viewProduct();
+		System.out.println("_________________________________________________________");
+		
+		System.out.println("Enter id of product to update data:");
+		int updateID = sc.nextInt();
+		
 		//Product obj = new Product();
 		ProductController.connection();
 		
@@ -150,10 +158,8 @@ public class ProductController {
 						System.out.println("Enter Quantity to update: ");
 						updateqty = sc.nextInt();
 						String sql3 = "UPDATE products SET quantity = '" + updateqty + "' WHERE id = '" + updateID + "'";
-						
 						smt.execute(sql3);
-						connection().close();
-						smt.close();
+	
 						System.out.println("Quantity updated successfully!!");
 						break;
 						
@@ -190,6 +196,11 @@ public class ProductController {
 	
 	public void deleteProduct() throws Exception
 	{
+		System.out.println("Available data in database: ");
+		System.out.println();
+		viewProduct();
+		System.out.println("_________________________________________________________");
+		
 		System.out.println("Enter id :");
 		int id = sc.nextInt();
 		

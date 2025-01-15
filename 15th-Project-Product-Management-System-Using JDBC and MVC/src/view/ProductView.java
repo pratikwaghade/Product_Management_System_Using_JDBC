@@ -35,23 +35,10 @@ public class ProductView {
 				break;
 				
 			case 3:
-				System.out.println("Available data in database: ");
-				System.out.println();
-				obj.viewProduct();
-				System.out.println("_________________________________________________________");
-				
-				System.out.println("Enter id of product to update data:");
-				int updateID = sc.nextInt();
-				
-				obj.updateProduct(updateID);	
+				obj.updateProduct();	
 				break;
 				
 			case 4:
-				System.out.println("Available data in database: ");
-				System.out.println();
-				obj.viewProduct();
-				System.out.println("_________________________________________________________");
-				
 				obj.deleteProduct();
 				break;
 			}
